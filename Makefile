@@ -1,4 +1,4 @@
-DOCKER_TAG?=1.0.4
+DOCKER_TAG?=1.0.5
 
 setup:
 	mkdir -p ./bin
