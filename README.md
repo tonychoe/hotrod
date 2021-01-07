@@ -23,6 +23,7 @@ to view the traces. A tutorial / walkthrough is available:
 
 * Switched Zap logger to the production pre-set from the development (cmd/root.go)
 * Switched the default metric expression to prometheus format
+* Replaced the URL of jquery js from local to the CDN, so Hotrod can run well behind of proxy
 
 ## Running
 
