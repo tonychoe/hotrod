@@ -1,7 +1,6 @@
 # Hot R.O.D. - Rides on Demand
 
-Forked from https://github.com/jaegertracing/jaeger
-Mixed the works from https://github.com/chronosphereiox/jaeger-example
+This is the customized version, forked from https://github.com/jaegertracing/jaeger and some works from https://github.com/chronosphereiox/jaeger-example
 
 This is a demo application that consists of several microservices and illustrates
 the use of the OpenTracing API. It can be run standalone, but requires Jaeger backend
@@ -29,7 +28,7 @@ to view the traces. A tutorial / walkthrough is available:
 
 ### Run everything via `docker-compose`
 
-* Download `docker-compose.yml` from https://github.com/jaegertracing/jaeger/blob/master/examples/hotrod/docker-compose.yml
+* Download `docker-compose.yml` 
 * Run Jaeger backend and HotROD demo with `docker-compose -f path-to-yml-file up`
 * Access Jaeger UI at http://localhost:16686 and HotROD app at http://localhost:8080
 * Shutdown / cleanup with `docker-compose -f path-to-yml-file down`
@@ -54,9 +53,9 @@ Jaeger UI can be accessed at http://localhost:16686.
 ### Run HotROD from source
 
 ```bash
-git clone git@github.com:jaegertracing/jaeger.git jaeger
-cd jaeger
-go run ./examples/hotrod/main.go all
+git clone git@github.com:tonychoe/hotrod.git hotrod
+cd hotrod
+go run ./main.go all
 ```
 
 ### Run HotROD from docker
@@ -67,7 +66,7 @@ docker run \
   --env JAEGER_AGENT_HOST=jaeger \
   --env JAEGER_AGENT_PORT=6831 \
   -p8080-8083:8080-8083 \
-  jaegertracing/example-hotrod:latest \
+  tonychoe/hotrod:latest \
   all
 ```
 
@@ -89,5 +88,5 @@ http://localhost:16686, but if your Jaeger UI is running at a different address,
 it can be customized via `-j <address>` flag passed to HotROD, e.g.
 
 ```
-go run ./examples/hotrod/main.go all -j http://jaeger-ui:16686
+go run ./main.go all -j http://jaeger-ui:16686
 ```
